@@ -20,9 +20,9 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: 
-    //"http://localhost:3000",
-    "https://food-e-client.vercel.app" // Your frontend origin
+    origin:
+      //"http://localhost:3000",
+      "https://food-e-client.vercel.app", // Your frontend origin
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"], // Add any other headers you need
   })
