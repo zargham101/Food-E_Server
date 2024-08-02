@@ -5,26 +5,14 @@ const cors = require("cors");
 
 const dbConnection = require("./db");
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    //"http://localhost:3000"
-    "https://food-e-client.vercel.app"
-  );
-  res.header(
-    "Access-Control-Allow-Header",
-    "Origin, X-Requested-Width, Content-Type, Accept"
-  );
-  next();
-});
-
 app.use(
   cors({
     origin:
       //"http://localhost:3000",
       "https://food-e-client.vercel.app", // Your frontend origin
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"], // Add any other headers you need
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 
